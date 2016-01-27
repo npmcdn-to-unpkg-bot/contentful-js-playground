@@ -1,0 +1,22 @@
+{
+  "name": "contentful-js-playground",
+  "version": "1.0.0",
+  "description": "Contentful playground",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server --host=0.0.0.0 --port=9010 --hot"
+  },
+  "keywords": [],
+  "author": "Tiago Rodrigues <tiago@contentful.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-loader": "^6.2.1",
+    "contentful": "^2.1.0",
+    "contentful-management": "^0.8.3",
+    "es6-promise": "^3.0.2",
+    "lodash": "^3.10.1",
+    "webpack": "^2.0.5-beta",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {}
+}
