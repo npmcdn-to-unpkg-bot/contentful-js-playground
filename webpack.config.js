@@ -1,14 +1,12 @@
+var webpack = require('webpack')
 module.exports = {
-  entry: {
-    main: [
-      'webpack/hot/dev-server',
-      './main.js'
-    ]
-  },
+  context: __dirname,
+  entry: './main.js',
   output: {
-    path: __dirname,
+    path: __dirname + '/dist',
     filename: '[name].bundle.js'
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -18,9 +16,4 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
-  watch: true,
-  watchOptions: {
-    poll: true
-  }
-};
+}

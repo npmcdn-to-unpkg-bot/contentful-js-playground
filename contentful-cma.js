@@ -1,15 +1,23 @@
+var config = require('./config')
 var contentfulManagement = require('contentful-management');
 var makebutton = require('./makebutton');
 var _ = require('lodash')
 
-makebutton('cma stuffs', () => {
-  var client = contentfulManagement.createClient({
-    accessToken: ''
-  });
+export default function setupCma() {
+  makebutton('cma stuffs', () => {
+    var client = contentfulManagement.createClient({
+      accessToken: config.cmaToken
+    });
 
-  client.getSpace('')
-  .then(space => {
-    space.getEntries()
-    .then(entries => console.log(entries))
-  })
-});
+    client.getSpace(config.spaceId)
+    .then(space => {
+      space.getEntries()
+      .then(entries => {
+        entries.items[0].update()
+        .then((updatedEntry) => {
+          console.log('entries', updatedEntry)
+        })
+      })
+    })
+  });
+}

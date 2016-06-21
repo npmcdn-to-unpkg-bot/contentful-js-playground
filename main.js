@@ -1,2 +1,5 @@
-import * as cfcda from './contentful-cda.js'
-import * as cfcma from './contentful-cma.js'
+import setupCda from './contentful-cda'
+import setupCma from './contentful-cma'
+
+setupCda()
+setupCma()
